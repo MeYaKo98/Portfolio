@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive portfolio website built with React. Display your projects and skills with a flexible, data-driven architecture.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This is a customizable portfolio website with:
 
-### `npm start`
+- **Dynamic Project Management**: Projects are defined in JSON, making it easy to add or update projects without touching code
+- **Interactive UI**: Smooth animations and interactive components for an engaging user experience
+- **Responsive Design**: Works seamlessly across all devices
+- **Modular Architecture**: Component-based structure for easy maintenance and extension
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Responsive design with smooth animations
+- Interactive project carousel
+- Real-time text animation effects
+- JSON-based project configuration for easy updates
+- Dark mode support
+- Contact section
+- Deployed on GitHub Pages
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js (v14 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository and install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+### Available Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The page will reload when you make changes, and you may see any lint errors in the console.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### `npm run build`
 
-## Learn More
+Builds the app for production to the `build` folder. The build is optimized and minified, ready for deployment.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### `npm run deploy`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Deploys the application to GitHub Pages.
 
-### Code Splitting
+#### `npm test`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Launches the test runner in interactive watch mode.
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Frontend**: React with component-based architecture
+- **Styling**: CSS3 with responsive design
+- **Data Management**: JSON-based project configuration
+- **Deployment**: GitHub Pages
 
-### Making a Progressive Web App
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+src/
+  ├── component/          # React components (Navbar, Header, About, Projects, Contact)
+  ├── App.js              # Main application component
+  ├── App.css             # Global styles
+  └── index.js            # Entry point
 
-### Advanced Configuration
+public/
+  ├── index.html          # HTML template
+  ├── projects/
+  │   ├── info.json       # Project metadata
+  │   ├── descriptions/   # Detailed project descriptions
+  │   └── images/         # Project images
+  └── robots.txt
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Adding New Projects
 
-### Deployment
+Projects are managed through `public/projects/info.json`. To add a new project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Add a new entry to the `info.json` array with your project details
+2. Create an HTML file in `public/projects/descriptions/` for the detailed description
+3. Add your project image to `public/projects/images/`
 
-### `npm run build` fails to minify
+No code changes required!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This project is open source and available for personal use and modification.
+
+## Contact
+
+For inquiries, please use the contact form included in the portfolio website.

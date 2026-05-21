@@ -100,24 +100,37 @@ function About() {
             <div className="skills-title">My Skills</div>
             <div className="skill-container">
               <span>C/C++</span>
-              <span>Python</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>React JS</span>
-              <span>Git</span>
-              <span>Machine Learning</span>
-              <span>Deep Learning</span>
+              <span>Embedded C</span>
+              <span>STM32</span>
+              <span>RTOS</span>
+              <span>PID</span>
+              <span>Control</span>
+              <span>Sensor Fusion</span>
+              <span>ROS</span>
+              <span>Gazebo</span>
+              <span>Path Planning</span>
+              <span>Localization</span>
+              <span>Embedded SW Dev</span>
+              <span>Artificial Intelligence</span>
+              <span>CNN</span>
+              <span>Auto-Encoder</span>
               <span>PyTorch</span>
               <span>TensorFlow</span>
               <span>OpenCV</span>
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>React JS</span>
+              <span>ExpressJS</span>
+              <span>MongoDB</span>
+              <span>Socket.IO</span>
+              <span>JWT</span>
+              <span>Git</span>
+              <span>CI/CD</span>
+              <span>Docker</span>
+              <span>Linux</span>
+              <span>CMake</span>
               <span>Qt</span>
-              <span>ROS</span>
-              <span>Localization</span>
-              <span>Navigation</span>
-              <span>Regulation</span>
               <span>SolidWorks</span>
-              <span>PCB Design</span>
-              <span>Embedded SW Dev</span>
             </div>
           </div>
         </div>

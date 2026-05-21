@@ -19,5 +19,41 @@
       "STM32",
       "Atmega 328P"
     ]
+  },
+  {
+    "id": "motion-robotics",
+    "title": "Motion Robotics Framework",
+    "description": "motion_robotics.html",
+    "image": "motion_robotics.png",
+    "skills": [
+      "C/C++",
+      "Embedded Systems",
+      "RTOS",
+      "Multi-Threading",
+      "Modular Architecture",
+      "Abstraction Design Patterns",
+      "Protocol Management",
+      "Real-Time Systems",
+      "Robotics",
+      "Sensor Fusion"
+    ]
+  },
+  {
+    "id": "eurobot-overlay",
+    "title": "Eurobot Score Stream Overlay Platform",
+    "description": "eurobot_overlay.html",
+    "image": "eurobot_overlay.png",
+    "skills": [
+      "ReactJS",
+      "Express.js",
+      "MongoDB",
+      "Socket.IO",
+      "JWT Authentication",
+      "Docker",
+      "Full-Stack Development",
+      "Real-Time Communication",
+      "OBS Integration",
+      "UI/UX Design"
+    ]
   }
 ]

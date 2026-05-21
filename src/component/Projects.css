@@ -292,7 +292,6 @@
 
 /* Back button in Fullscreen View */
 .clicked::after {
-  content: "← Close Details";
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;

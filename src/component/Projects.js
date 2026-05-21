@@ -116,6 +116,25 @@ function Projects() {
     return () => PubSub.unsubscribe(token);
   }, []);
 
+  // Handle back button to close project instead of navigating
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (clicked) {
+        // If a project is open, close it instead of going back
+        document.documentElement.style.overflow = "auto";
+        setClicked(null);
+        // Push state again to prevent default back navigation
+        window.history.pushState(null, null, window.location.pathname);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [clicked]);
+
   const handleClick = (event, info) => {
     if (!clicked) {
       // calculate the position of the clicked element
@@ -140,6 +159,8 @@ function Projects() {
           info={info}
         />
       );
+      // Push state to history so back button triggers popstate
+      window.history.pushState({ projectOpen: true }, null, window.location.pathname);
       //lock the scroll
       document.documentElement.style.overflow = "hidden";
     } else {

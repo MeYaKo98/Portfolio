@@ -28,10 +28,13 @@ function About() {
             <div className="description-title">Get to know me!</div>
             <div className="description">
               <p>
-                I'm an Industrial IT and Automation Engineer specialised in{" "}
-                <span>robotics</span> and <span>embedded software</span>{" "}
-                with knowledge in software development. Check out some of my
-                work in the{" "}
+                I'm a passionate <span>robotics engineer</span> with hands-on
+                experience in <span>embedded systems</span> and{" "}
+                <span>AI-driven computer vision</span> solutions. Specialised in
+                developing innovative systems for real-world applications. As a{" "}
+                <span>Software Developer</span>, I leverage
+                my expertise in <span>C/C++</span> and <span>Python</span> to
+                create impactful projects. Check out some of my work in the{" "}
                 <span
                   className="colored"
                   href="#"
@@ -42,9 +45,10 @@ function About() {
                 section.
               </p>
               <p>
-                I also like sharing content related to <span>robotics</span>{" "}
-                that I have learned over the years so it can help other people
-                of the Community. Feel free to Connect or Follow me on my{" "}
+                I'm passionate about sharing knowledge related to{" "}
+                <span>robotics</span>, <span>embedded systems</span>, and{" "}
+                <span>AI</span> that I've gained over the years. Feel free to
+                Connect or Follow me on my{" "}
                 <span className="colored">
                   {" "}
                   <a
@@ -59,13 +63,28 @@ function About() {
                   >
                     LinkedIn
                   </a>
+                </span>{" "}
+                and{" "}
+                <span className="colored">
+                  <a
+                    href="https://github.com/MeYaKo98"
+                    target="_blank"
+                    className="colored"
+                    style={{
+                      textDecoration: "none",
+                      color: "var(--accent-color)",
+                    }}
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
                 </span>
                 .
               </p>
               <p>
-                I'm open to <span>Job</span> opportunities where I can
-                contribute, learn and grow. If you have a good opportunity that
-                matches my skills and experience then don't hesitate to{" "}
+                I'm open to <span>Job opportunities</span> where I can
+                contribute, learn and grow. If you have an opportunity that
+                matches my skills and experience, don't hesitate to{" "}
                 <span
                   className="colored"
                   href="#"

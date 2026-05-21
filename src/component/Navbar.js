@@ -31,7 +31,7 @@ function Navbar() {
     const remToPixels = parseFloat(
       getComputedStyle(document.documentElement).fontSize
     );
-    const navbarHeight = elementId === "Home" ? 6 : 5;
+    const navbarHeight = 5;
     const elementHeight =
       element.getBoundingClientRect().top +
       window.pageYOffset -
@@ -42,7 +42,7 @@ function Navbar() {
       behavior: "smooth",
     });
 
-    handleMenuToggle();
+    setShowMenu(false);
 
     //lock navbar
     PubSub.publish("clicked", null);

@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import DOMPurify from "dompurify";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import PubSub from "pubsub-js";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function HTMLFileLoader({ className, address }) {
   const [htmlContent, setHtmlContent] = useState("");
@@ -43,7 +45,12 @@ function Project({ info, className, onClick, style }) {
             backgroundPosition: "center",
           }}
           onClick={onClick}
-        ></div>
+        >
+          <div className="project-card-overlay">
+            <h3 className="project-card-title">{info.title}</h3>
+            <span className="project-card-link">View Details &rarr;</span>
+          </div>
+        </div>
 
         <div className="right-container">
           <div className="title">{info.title}</div>
@@ -164,13 +171,14 @@ function Projects() {
         <div className="horizantal-container">
           <Swiper
             autoplay={{
-              delay: 2500,
+              delay: 3500,
               disableOnInteraction: false,
             }}
-            spaceBetween={50}
+            spaceBetween={30}
             navigation={true}
+            pagination={{ clickable: true }}
             grabCursor={true}
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation, Pagination]}
             breakpoints={{
               576: {
                 slidesPerView: 1,

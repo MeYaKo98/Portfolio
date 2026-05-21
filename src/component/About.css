@@ -1,174 +1,180 @@
 .about-container {
-  top: 0;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: var(--darker-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .about {
   width: 100%;
   min-height: calc(100vh - 5rem);
-  padding: 0 2rem;
+  padding: 5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   max-width: var(--max-width);
   flex-direction: column;
+  z-index: 1;
 }
 
 #About .title {
   font-size: 3rem;
-  font-weight: 700;
-  padding-top: 2rem;
-  padding-bottom: calc(0.5rem + 3px);
-  height: 7rem;
-  display: block;
+  font-weight: 800;
+  color: var(--primary-font-color);
+  letter-spacing: -0.5px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 #About .title::after {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.5rem;
-  background-color: var(--accent-color);
-  height: 3px;
-  width: 4rem;
+  bottom: -15px;
+  background: var(--accent-gradient);
+  height: 4px;
+  width: 5rem;
+  border-radius: 2px;
   display: block;
   content: "";
-  align-self: center;
 }
 
 #About .horizantal-container {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 4rem;
 }
 
-#About .left-container,
+#About .left-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 #About .right-container {
   width: 50%;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 12rem);
-  justify-content: center;
-  padding: 4rem 0 4rem 0;
+  justify-content: flex-start;
 }
 
-#About .left-container {
-  padding-right: 3rem;
-}
-
-#About .right-container {
-  padding-left: 3rem;
-}
-
-#About .description-title {
+#About .description-title,
+#About .skills-title {
   font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--primary-font-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
 }
 
 #About .description {
   color: var(--secondary-font-color);
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.7;
 }
 
 #About .description p {
-  margin: 0.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 #About .description span {
   font-weight: 600;
+  color: var(--primary-font-color);
+  background: rgba(0, 242, 254, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+}
+
+#About .description span.colored,
+#About .description a.colored {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  cursor: pointer;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+  position: relative;
   text-decoration: none;
 }
 
-#About .description span.colored {
-  color: var(--accent-color);
-  cursor: pointer;
-}
-
-#About .skills-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+#About .description span.colored:hover,
+#About .description a.colored:hover {
+  color: var(--primary-font-color) !important;
+  text-shadow: 0 0 8px var(--accent-color);
 }
 
 #About .skill-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
+/* Interactive Glassmorphic Skill Badge */
 #About .skill-container span {
-  padding: 0.5rem 1rem;
-  background-color: var(--darker-bg);
-  margin: 0 0.75rem 0.75rem 0;
-  border-radius: 0.5rem;
-  font-size: 1.4rem;
-  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: var(--secondary-font-color);
   user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 #About .skill-container span:hover {
-  background-color: var(--accent-color);
-  color: var(--main-color);
-  transition: 0.3s;
+  background-color: rgba(0, 242, 254, 0.05);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 242, 254, 0.15);
 }
 
 @media (max-width: 1200px) {
   #About .title {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
-  #About .description-title {
-    font-size: 1.8rem;
-  }
-  #About .description {
-    font-size: 1.2rem;
-  }
+  #About .description-title,
   #About .skills-title {
     font-size: 1.8rem;
-  }
-  #About .skill-container span {
-    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 992px) {
-  #About .title {
-    font-size: 2rem;
+  #About .horizantal-container {
+    flex-direction: column;
+    gap: 3rem;
   }
-  #About .description-title {
-    font-size: 1.4rem;
+  #About .left-container,
+  #About .right-container {
+    width: 100%;
+  }
+  #About .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+  #About .title {
+    font-size: 1.8rem;
   }
   #About .description {
     font-size: 1.1rem;
   }
-  #About .skills-title {
-    font-size: 1.4rem;
-  }
   #About .skill-container span {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 767px) {
-  #About .horizantal-container {
-    flex-direction: column;
-  }
-  #About .left-container {
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    padding: 4rem 0 0 0;
-    min-height: calc(50vh - 6rem);
-  }
-  #About .right-container {
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    padding: 5rem 0 4rem 0;
-    min-height: calc(50vh - 6rem);
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
   }
 }

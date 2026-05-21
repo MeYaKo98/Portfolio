@@ -29,7 +29,7 @@ function About() {
             <div className="description">
               <p>
                 I'm an Industrial IT and Automation Engineer specialised in{" "}
-                <span>robotics</span> and <span>artificial intelligence</span>{" "}
+                <span>robotics</span> and <span>embedded software</span>{" "}
                 with knowledge in software development. Check out some of my
                 work in the{" "}
                 <span

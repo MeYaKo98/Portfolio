@@ -1,0 +1,15 @@
+<p>
+  This project focuses on the development of a fully autonomous robotic arm capable of sorting and manipulating objects using vision guidance and deep learning. By integrating computer vision algorithms with a 6-axis arm, the system can detect, classify, and calculate the precise 3D grasp poses of various industrial parts.
+</p>
+
+<p>
+  The hardware integrates an Intel RealSense depth camera mounted on the arm's end-effector. The software pipeline runs on ROS (Robot Operating System), processing RGB-D streams using a custom-trained YOLO model for object identification and a PointNet architecture for 6D grasp pose estimation. 
+</p>
+
+<p>
+  Key aspects developed in this work:
+  <br />· OpenCV and PyTorch integration for real-time deep learning classification
+  <br />· Motion planning using MoveIt! with collision avoidance in dynamic scenes
+  <br />· Hand-eye calibration and camera-to-robot coordinate mapping
+  <br />· Embedded controllers for actuator feedback and closed-loop speed regulation
+</p>

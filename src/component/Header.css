@@ -1,19 +1,76 @@
 .header-container {
+  position: relative;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   background-color: var(--main-color);
+  overflow: hidden;
+  padding-top: 5rem; /* Account for navbar */
+}
+
+/* Drifting Glowing Orbs */
+.glowing-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  -webkit-filter: blur(140px);
+  z-index: 0;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-color) 0%, rgba(79, 172, 254, 0.4) 100%);
+  top: -100px;
+  left: -150px;
+  animation: drift-orb 20s infinite alternate ease-in-out;
+}
+
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #b19ffb 0%, rgba(224, 195, 252, 0.1) 100%);
+  bottom: -150px;
+  right: -200px;
+  animation: drift-orb-reverse 25s infinite alternate ease-in-out;
+}
+
+@keyframes drift-orb {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80px, 50px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, 100px) scale(0.9);
+  }
+}
+
+@keyframes drift-orb-reverse {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-100px, -60px) scale(0.9);
+  }
+  100% {
+    transform: translate(40px, 40px) scale(1.15);
+  }
 }
 
 .header {
   width: 100%;
-  min-height: calc(100svh - 6rem);
-  padding: 0 2rem;
+  min-height: calc(100vh - 5rem);
+  padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: var(--max-width);
+  z-index: 1;
 }
 
 #Home .top-container {
@@ -21,110 +78,224 @@
   height: 100%;
   display: flex;
   align-items: center;
+  gap: 3rem;
 }
 
-#Home .left-container,
-#Home .right-container {
-  padding: 4rem 0 4rem 0;
-  width: 50%;
+#Home .left-container {
+  padding: 2rem 0;
+  width: 55%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-#Home .photo {
-  max-width: 90%;
-  align-self: center;
+  text-align: left;
 }
 
-#Home .greetings {
-  color: var(--primary-font-color);
-  font-size: 4rem;
+#Home .right-container {
+  padding: 2rem 0;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Photo Frame Redesign */
+#Home .photo-frame {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: var(--accent-gradient);
+  padding: 4px;
+  animation: blob-shape 12s infinite alternate ease-in-out, float-pic 6s infinite ease-in-out;
+  box-shadow: 0 15px 45px rgba(0, 242, 254, 0.2);
+  transition: transform 0.4s ease;
+}
+
+#Home .photo-frame:hover {
+  transform: scale(1.03) rotate(2deg);
+  box-shadow: 0 20px 60px rgba(0, 242, 254, 0.35);
+}
+
+#Home .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  background-color: var(--darker-bg);
+}
+
+@keyframes blob-shape {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  50% {
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+  }
+  100% {
+    border-radius: 70% 30% 50% 50% / 30% 50% 50% 70%;
+  }
+}
+
+@keyframes float-pic {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Greetings and Typography */
+#Home .greeting-sub {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--secondary-font-color);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+#Home .greeting-main {
+  font-size: 4.2rem;
   font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 30%, #a8c0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
 #Home .summary {
   color: var(--secondary-font-color);
-  padding-top: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
+#Home .typing-text {
+  color: var(--accent-color);
+  font-weight: 600;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
+}
+
+/* CTA Buttons */
 #Home .button-container {
   display: flex;
-  padding-top: 2.5rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
 }
 
 #Home .hire-me-button {
-  color: var(--main-color);
-  background-color: var(--accent-color);
+  color: #080710;
+  background: var(--accent-gradient);
   text-align: center;
-  border-color: var(--accent-color);
-  border-style: solid;
-  padding: 0.8rem;
-  width: 150px;
-  font-weight: 500;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
+}
+
+#Home .hire-me-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.45);
 }
 
 #Home .know-more-button {
-  margin-left: 1rem;
   color: var(--primary-font-color);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   text-align: center;
-  border-color: var(--accent-color);
-  border-style: solid;
-  padding: 0.8rem;
-  width: 150px;
-  font-weight: 500;
-}
-
-#Home .know-more-button,
-#Home .hire-me-button {
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
   user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#Home .image-container {
-  align-self: center;
-  text-align: center;
-  background-color: white;
-  border-radius: 50%;
-  height: calc(50svh - 6rem);
-  width: calc(50svh - 6rem);
+#Home .know-more-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 242, 254, 0.1);
 }
 
+/* Responsive adjustments */
 @media (max-width: 1200px) {
-  #Home .greetings {
+  #Home .greeting-main {
     font-size: 3.5rem;
   }
-  #Home .button-container {
-    display: flex;
-    padding-top: 2rem;
+  #Home .photo-frame {
+    width: 320px;
+    height: 320px;
   }
 }
 
 @media (max-width: 992px) {
-  #Home .greetings {
-    font-size: 2.7rem;
+  .header {
+    flex-direction: column;
+    padding-top: 2rem;
+  }
+  #Home .top-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+  #Home .left-container {
+    width: 100%;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  #Home .right-container {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  #Home .greeting-main {
+    font-size: 3rem;
+  }
+  #Home .summary {
+    justify-content: center;
   }
 }
 
-@media (max-width: 767px) {
-  #Home .greetings {
-    font-size: 2.5rem;
+@media (max-width: 576px) {
+  #Home .greeting-main {
+    font-size: 2.4rem;
   }
-  #Home .top-container {
-    flex-direction: column;
+  #Home .greeting-sub {
+    font-size: 1.2rem;
   }
-  #Home .left-container {
-    justify-content: center;
-    width: 100%;
-    min-height: calc(100svh - 6rem);
+  #Home .summary {
+    font-size: 1.2rem;
   }
-  #Home .right-container {
-    justify-content: center;
-    width: 100%;
-    padding: 0 0 4rem 0;
+  #Home .photo-frame {
+    width: 250px;
+    height: 250px;
   }
   #Home .button-container {
-    padding-top: 2rem;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+  }
+  #Home .hire-me-button,
+  #Home .know-more-button {
+    width: 80%;
   }
 }

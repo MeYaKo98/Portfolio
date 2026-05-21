@@ -1,209 +1,258 @@
 .contact-container {
-  top: 0;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: var(--bg-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .contact {
   width: 100%;
   min-height: calc(100vh - 5rem);
-  padding: 0 2rem;
+  padding: 5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   max-width: var(--max-width);
   flex-direction: column;
+  z-index: 1;
 }
 
 #Contact .title {
   font-size: 3rem;
-  font-weight: 700;
-  padding-top: 2rem;
-  padding-bottom: calc(0.5rem + 3px);
-  height: 7rem;
-  display: block;
+  font-weight: 800;
+  color: var(--primary-font-color);
+  letter-spacing: -0.5px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 #Contact .title::after {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 0.5rem;
-  background-color: var(--accent-color);
-  height: 3px;
-  width: 4rem;
+  bottom: -15px;
+  background: var(--accent-gradient);
+  height: 4px;
+  width: 5rem;
+  border-radius: 2px;
   display: block;
   content: "";
-  align-self: center;
 }
 
 #Contact .horizantal-container {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-#Contact .left-container,
-#Contact .right-container {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 12rem);
-  justify-content: center;
-  padding: 4rem 0 4rem 0;
+  gap: 4rem;
 }
 
 #Contact .left-container {
-  width: 35%;
-  padding-right: 1.5rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #Contact .contact-info {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: center;
+  gap: 2rem;
+  width: 100%;
 }
 
+/* Glassmorphic Contact Card Redesign */
 #Contact .email-info-container,
 #Contact .phone-info-container {
-  padding: 0.5rem;
-  overflow: hidden;
-  height: 15rem;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-decoration: none;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#Contact .email-info-container:hover,
+#Contact .phone-info-container:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  background-color: rgba(0, 242, 254, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15);
 }
 
 #Contact .phone-info,
 #Contact .email-info {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--secondary-font-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-font-color);
   text-align: center;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+
+#Contact .email-info-container:hover .email-info,
+#Contact .phone-info-container:hover .phone-info {
+  color: var(--accent-color);
 }
 
 #Contact .phone-logo,
 #Contact .email-logo {
-  align-self: center;
-  margin-bottom: 1rem;
-  color: var(--secondary-font-color);
-  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  font-size: 3.5rem;
+  transition: transform 0.3s ease;
+}
+
+#Contact .email-info-container:hover .email-logo,
+#Contact .phone-info-container:hover .phone-logo {
+  transform: scale(1.1);
 }
 
 #Contact .right-container {
-  width: 65%;
-  padding-left: 1.5rem;
-}
-
-#Contact .form {
-  width: 100%;
-  height: 100%;
+  width: 60%;
   display: flex;
-  padding: 0 0.5rem 0 0.5rem;
   flex-direction: column;
   justify-content: center;
 }
 
-#Contact .form * {
-  margin: 0.25rem 0;
-  font-size: 1.4rem;
-  font-weight: 400;
-}
-
-#Contact .form input {
-  border-color: var(--darker-bg);
-  border-style: solid;
-  border-width: 3px;
+#Contact .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--darker-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
 }
 
 #Contact .form label {
-  color: var(--secondary-font-color);
+  color: var(--primary-font-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: var(--title-font);
 }
 
-#Contact .form input {
-  padding: 0.5rem;
+#Contact .form input[type="text"],
+#Contact .form input[type="email"],
+#Contact .form textarea {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--primary-font-color);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#Contact .form input[type="text"]:focus,
+#Contact .form input[type="email"]:focus,
+#Contact .form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
 }
 
 #Contact .form textarea {
-  border-color: var(--darker-bg);
-  border-style: solid;
-  border-width: 3px;
-  padding: 0.5rem;
   resize: none;
-  height: 8rem;
+  height: 10rem;
 }
 
+/* Redesign Submit Button */
 #Contact .form .button {
-  border-color: var(--accent-color);
-  background-color: var(--accent-color);
+  background: var(--accent-gradient);
+  border: none;
+  color: #080710;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 160px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25);
   margin-top: 1rem;
-  color: white;
-  width: 150px;
+  align-self: flex-start;
+}
+
+#Contact .form .button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.45);
+}
+
+#Contact .form .button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
 }
 
 @media (max-width: 1200px) {
   #Contact .title {
-    font-size: 2.7rem;
-  }
-  #Contact .form *,
-  #Contact .phone-info,
-  #Contact .email-info {
-    font-size: 1.2rem;
+    font-size: 2.6rem;
   }
 }
 
 @media (max-width: 992px) {
-  #Contact .title {
-    font-size: 2rem;
-  }
-  #Contact .form *,
-  #Contact .phone-info,
-  #Contact .email-info {
-    font-size: 1.1rem;
-  }
-
-  #Contact .phone-info-container,
-  #Contact .email-info-container {
-    width: 50%;
-    height: auto;
-    margin-top: 4rem;
-  }
   #Contact .horizantal-container {
     flex-direction: column;
-  }
-  #Contact .contact-info {
-    flex-direction: row;
-    min-height: 0;
+    gap: 3rem;
   }
   #Contact .left-container {
     width: 100%;
-    min-height: 0;
-    padding: 0;
+  }
+  #Contact .contact-info {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  #Contact .email-info-container,
+  #Contact .phone-info-container {
+    width: 50%;
   }
   #Contact .right-container {
     width: 100%;
-    min-height: 0;
   }
-  #Contact .right-container {
-    width: 100%;
-    padding-left: 0;
+  #Contact .title {
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 767px) {
   #Contact .contact-info {
     flex-direction: column;
-    min-height: 0;
   }
-  #Contact .phone-info-container,
-  #Contact .email-info-container {
+  #Contact .email-info-container,
+  #Contact .phone-info-container {
     width: 100%;
-    height: auto;
-    margin-top: 4rem;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 3rem 1.5rem;
+  }
+  #Contact .title {
+    font-size: 1.8rem;
+  }
+  #Contact .form {
+    padding: 2rem 1.5rem;
+  }
+  #Contact .form .button {
+    width: 100%;
+    align-self: center;
   }
 }

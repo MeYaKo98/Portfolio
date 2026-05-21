@@ -1,32 +1,19 @@
 [
   {
-    "title": " ",
-    "description": " ",
-    "image": " ",
-    "skills": ["hi"]
-  },
-  {
-    "title": " ",
-    "description": " ",
-    "image": " ",
-    "skills": ["hi"]
-  },
-  {
-    "title": "Eurobot 2019",
+    "id": "eurobot-2019",
+    "title": "Eurobot 2019 (7th Place Global)",
     "description": "eurobot19.html",
-    "image": "eurobot19.jpg",
+    "image": "eurobot19.png",
     "skills": [
       "Robotics",
       "Autonomous Navigation",
-      "Obstavle Avoidance",
+      "Obstacle Avoidance",
       "Odometry",
       "Localization",
       "Control Theory",
       "Mechanical Design",
       "SolidWorks",
       "PCB Design",
-      "Proteus",
-      "Eagle",
       "C/C++",
       "Embedded Programming",
       "STM32",

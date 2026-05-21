@@ -20,7 +20,10 @@ function Navbar() {
     else setStickyNav(false);
   };
 
-  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   //used to navigate throught the page
   const scrollToSection = (elementId) => {

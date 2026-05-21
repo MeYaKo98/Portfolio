@@ -1,6 +1,7 @@
 import "./Projects.css";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import DOMPurify from "dompurify";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import PubSub from "pubsub-js";
@@ -23,7 +24,7 @@ function HTMLFileLoader({ className, address }) {
   return (
     <div
       className={className}
-      dangerouslySetInnerHTML={{ __html: htmlContent }}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlContent) }}
     />
   );
 }
@@ -102,10 +103,11 @@ function Projects() {
 
   //unclick when using navbar
   useEffect(() => {
-    PubSub.subscribe("clicked", (topic, msg) => {
+    const token = PubSub.subscribe("clicked", (topic, msg) => {
       setClicked(msg);
     });
-  });
+    return () => PubSub.unsubscribe(token);
+  }, []);
 
   const handleClick = (event, info) => {
     if (!clicked) {
@@ -185,7 +187,7 @@ function Projects() {
             }}
           >
             {projectsInfo.map((info, index) => (
-              <SwiperSlide style={{ minWidth: "1px" }} key={index}>
+              <SwiperSlide style={{ minWidth: "1px" }} key={info.id || index}>
                 <Project
                   className="slide-inner"
                   info={info}

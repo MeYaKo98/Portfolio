@@ -66,7 +66,11 @@ function Header() {
             </div>
           </div>
           <div className="right-container">
-            <img className="photo" src={photo} />
+            <img
+              className="photo"
+              src={photo}
+              alt="Mohamed Yassine Koubaa profile photo"
+            />
           </div>
         </div>
         <div className="bottom-container"></div>

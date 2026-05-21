@@ -1,0 +1,130 @@
+.header-container {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+}
+
+.header {
+  width: 100%;
+  min-height: calc(100svh - 6rem);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+}
+
+#Home .top-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#Home .left-container,
+#Home .right-container {
+  padding: 4rem 0 4rem 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#Home .photo {
+  max-width: 90%;
+  align-self: center;
+}
+
+#Home .greetings {
+  color: var(--primary-font-color);
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+#Home .summary {
+  color: var(--secondary-font-color);
+  padding-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+#Home .button-container {
+  display: flex;
+  padding-top: 2.5rem;
+}
+
+#Home .hire-me-button {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+  text-align: center;
+  border-color: var(--accent-color);
+  border-style: solid;
+  padding: 0.8rem;
+  width: 150px;
+  font-weight: 500;
+}
+
+#Home .know-more-button {
+  margin-left: 1rem;
+  color: var(--primary-font-color);
+  text-align: center;
+  border-color: var(--accent-color);
+  border-style: solid;
+  padding: 0.8rem;
+  width: 150px;
+  font-weight: 500;
+}
+
+#Home .know-more-button,
+#Home .hire-me-button {
+  cursor: pointer;
+  user-select: none;
+}
+
+#Home .image-container {
+  align-self: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 50%;
+  height: calc(50svh - 6rem);
+  width: calc(50svh - 6rem);
+}
+
+@media (max-width: 1200px) {
+  #Home .greetings {
+    font-size: 3.5rem;
+  }
+  #Home .button-container {
+    display: flex;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #Home .greetings {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #Home .greetings {
+    font-size: 2.5rem;
+  }
+  #Home .top-container {
+    flex-direction: column;
+  }
+  #Home .left-container {
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100svh - 6rem);
+  }
+  #Home .right-container {
+    justify-content: center;
+    width: 100%;
+    padding: 0 0 4rem 0;
+  }
+  #Home .button-container {
+    padding-top: 2rem;
+  }
+}

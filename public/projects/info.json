@@ -1,0 +1,36 @@
+[
+  {
+    "title": " ",
+    "description": " ",
+    "image": " ",
+    "skills": ["hi"]
+  },
+  {
+    "title": " ",
+    "description": " ",
+    "image": " ",
+    "skills": ["hi"]
+  },
+  {
+    "title": "Eurobot 2019",
+    "description": "eurobot19.html",
+    "image": "eurobot19.jpg",
+    "skills": [
+      "Robotics",
+      "Autonomous Navigation",
+      "Obstavle Avoidance",
+      "Odometry",
+      "Localization",
+      "Control Theory",
+      "Mechanical Design",
+      "SolidWorks",
+      "PCB Design",
+      "Proteus",
+      "Eagle",
+      "C/C++",
+      "Embedded Programming",
+      "STM32",
+      "Atmega 328P"
+    ]
+  }
+]

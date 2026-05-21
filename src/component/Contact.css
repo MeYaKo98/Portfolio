@@ -1,0 +1,209 @@
+.contact-container {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.contact {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  flex-direction: column;
+}
+
+#Contact .title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  padding-bottom: calc(0.5rem + 3px);
+  height: 7rem;
+  display: block;
+}
+
+#Contact .title::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: var(--accent-color);
+  height: 3px;
+  width: 4rem;
+  display: block;
+  content: "";
+  align-self: center;
+}
+
+#Contact .horizantal-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#Contact .left-container,
+#Contact .right-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 12rem);
+  justify-content: center;
+  padding: 4rem 0 4rem 0;
+}
+
+#Contact .left-container {
+  width: 35%;
+  padding-right: 1.5rem;
+}
+
+#Contact .contact-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+#Contact .email-info-container,
+#Contact .phone-info-container {
+  padding: 0.5rem;
+  overflow: hidden;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#Contact .phone-info,
+#Contact .email-info {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--secondary-font-color);
+  text-align: center;
+}
+
+#Contact .phone-logo,
+#Contact .email-logo {
+  align-self: center;
+  margin-bottom: 1rem;
+  color: var(--secondary-font-color);
+  font-size: 5rem;
+}
+
+#Contact .right-container {
+  width: 65%;
+  padding-left: 1.5rem;
+}
+
+#Contact .form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 0.5rem 0 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#Contact .form * {
+  margin: 0.25rem 0;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+#Contact .form input {
+  border-color: var(--darker-bg);
+  border-style: solid;
+  border-width: 3px;
+}
+
+#Contact .form label {
+  color: var(--secondary-font-color);
+}
+
+#Contact .form input {
+  padding: 0.5rem;
+}
+
+#Contact .form textarea {
+  border-color: var(--darker-bg);
+  border-style: solid;
+  border-width: 3px;
+  padding: 0.5rem;
+  resize: none;
+  height: 8rem;
+}
+
+#Contact .form .button {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  margin-top: 1rem;
+  color: white;
+  width: 150px;
+}
+
+@media (max-width: 1200px) {
+  #Contact .title {
+    font-size: 2.7rem;
+  }
+  #Contact .form *,
+  #Contact .phone-info,
+  #Contact .email-info {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #Contact .title {
+    font-size: 2rem;
+  }
+  #Contact .form *,
+  #Contact .phone-info,
+  #Contact .email-info {
+    font-size: 1.1rem;
+  }
+
+  #Contact .phone-info-container,
+  #Contact .email-info-container {
+    width: 50%;
+    height: auto;
+    margin-top: 4rem;
+  }
+  #Contact .horizantal-container {
+    flex-direction: column;
+  }
+  #Contact .contact-info {
+    flex-direction: row;
+    min-height: 0;
+  }
+  #Contact .left-container {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+  #Contact .right-container {
+    width: 100%;
+    min-height: 0;
+  }
+  #Contact .right-container {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #Contact .contact-info {
+    flex-direction: column;
+    min-height: 0;
+  }
+  #Contact .phone-info-container,
+  #Contact .email-info-container {
+    width: 100%;
+    height: auto;
+    margin-top: 4rem;
+  }
+}

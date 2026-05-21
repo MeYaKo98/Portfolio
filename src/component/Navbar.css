@@ -1,0 +1,146 @@
+.navbar-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+  height: 6rem;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.sticky {
+  position: sticky;
+  background-color: white;
+  height: 5rem;
+  box-shadow: 0 10px 10px 0px #bbb;
+  transition: 0.3s;
+}
+
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+}
+
+.logo_container {
+  color: var(--primary-font-color);
+  font-size: 2rem;
+  width: 150px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.logo_container span {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+
+.list_container {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  padding: 1rem 1rem;
+  font-weight: 500;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--primary-font-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+  transform: translateX(10px);
+  transition: 0.3s;
+}
+
+.menu-contact {
+  visibility: hidden;
+  position: absolute;
+}
+
+.contact-button {
+  color: var(--primary-font-color);
+  text-align: center;
+  border-color: var(--accent-color);
+  border-style: solid;
+  padding: 0.8rem;
+  width: 150px;
+  font-weight: 500;
+  margin-left: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.contact-button:hover {
+  background-color: var(--accent-color);
+  transition: 0.3s;
+  color: var(--main-color);
+}
+
+.menu-button {
+  visibility: hidden;
+  position: absolute;
+  font-size: 1.5rem;
+}
+
+/* Styles for medium screens and tablets */
+
+@media (max-width: 992px) {
+  .menu-button {
+    visibility: visible;
+    position: relative;
+  }
+  .list_container {
+    width: 0;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 0rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 10px 10px 0px #bbb;
+    transition: 0.5s;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align-last: center;
+    border-top: solid;
+    border-color: var(--main-color);
+  }
+
+  .menu-contact {
+    visibility: visible;
+    position: relative;
+  }
+  .contact-button {
+    padding: 1rem;
+    border-style: none;
+    margin-left: 0;
+    border-top: solid;
+    border-bottom: solid;
+    border-top-color: var(--main-color);
+    border-bottom-color: var(--accent-color);
+    white-space: nowrap;
+  }
+  .contact-button:hover {
+    background-color: white;
+    color: var(--accent-color);
+    transition: 0.3s;
+  }
+  .show {
+    width: 100%;
+    visibility: visible;
+  }
+}

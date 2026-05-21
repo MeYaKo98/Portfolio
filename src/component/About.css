@@ -1,0 +1,174 @@
+.about-container {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.about {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  flex-direction: column;
+}
+
+#About .title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  padding-bottom: calc(0.5rem + 3px);
+  height: 7rem;
+  display: block;
+}
+
+#About .title::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: var(--accent-color);
+  height: 3px;
+  width: 4rem;
+  display: block;
+  content: "";
+  align-self: center;
+}
+
+#About .horizantal-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#About .left-container,
+#About .right-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 12rem);
+  justify-content: center;
+  padding: 4rem 0 4rem 0;
+}
+
+#About .left-container {
+  padding-right: 3rem;
+}
+
+#About .right-container {
+  padding-left: 3rem;
+}
+
+#About .description-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#About .description {
+  color: var(--secondary-font-color);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+#About .description p {
+  margin: 0.5rem 0;
+}
+
+#About .description span {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#About .description span.colored {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+#About .skills-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#About .skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#About .skill-container span {
+  padding: 0.5rem 1rem;
+  background-color: var(--darker-bg);
+  margin: 0 0.75rem 0.75rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary-font-color);
+  user-select: none;
+}
+
+#About .skill-container span:hover {
+  background-color: var(--accent-color);
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+@media (max-width: 1200px) {
+  #About .title {
+    font-size: 2.7rem;
+  }
+  #About .description-title {
+    font-size: 1.8rem;
+  }
+  #About .description {
+    font-size: 1.2rem;
+  }
+  #About .skills-title {
+    font-size: 1.8rem;
+  }
+  #About .skill-container span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #About .title {
+    font-size: 2rem;
+  }
+  #About .description-title {
+    font-size: 1.4rem;
+  }
+  #About .description {
+    font-size: 1.1rem;
+  }
+  #About .skills-title {
+    font-size: 1.4rem;
+  }
+  #About .skill-container span {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #About .horizantal-container {
+    flex-direction: column;
+  }
+  #About .left-container {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 4rem 0 0 0;
+    min-height: calc(50vh - 6rem);
+  }
+  #About .right-container {
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 5rem 0 4rem 0;
+    min-height: calc(50vh - 6rem);
+  }
+}

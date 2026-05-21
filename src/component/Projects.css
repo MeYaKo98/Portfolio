@@ -1,0 +1,248 @@
+.projects-container {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--main-color);
+}
+
+.projects {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  flex-direction: column;
+}
+
+#Projects .title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  padding-bottom: calc(0.5rem + 3px);
+  height: 7rem;
+  display: block;
+}
+
+#Projects .title::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: var(--accent-color);
+  height: 3px;
+  width: 4rem;
+  display: block;
+  content: "";
+  align-self: center;
+}
+
+#Projects .swiper-wrapper {
+  height: 100%;
+}
+
+#Projects .horizantal-container {
+  min-height: calc(100vh - 12rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#Projects .slide-inner {
+  position: static;
+}
+
+.slide-inner {
+  z-index: 9;
+  position: fixed;
+  border-radius: 2rem;
+  min-height: calc(100vh - 16rem);
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-inner .horizontal-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 16rem);
+}
+
+.slide-inner .right-container,
+.slide-inner .left-container {
+  background-color: var(--darker-bg);
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-inner .right-container {
+  background-color: var(--main-color);
+  visibility: hidden;
+  position: absolute;
+  padding: 0 2rem;
+}
+
+.clicked .right-container,
+.clicked .left-container {
+  z-index: 2;
+  visibility: visible;
+  height: calc(100vh - 5rem);
+  animation: rearrange 1s forwards 0.5s;
+}
+
+@keyframes rearrange {
+  0% {
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.clicked .right-container {
+  z-index: 1;
+  left: 50%;
+  width: 50%;
+  overflow-y: scroll;
+}
+
+.clicked .title {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  padding-bottom: calc(0.5rem + 3px);
+  height: 7rem;
+  display: block;
+  text-align: center;
+}
+
+.clicked .title::after {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: var(--accent-color);
+  height: 3px;
+  width: 4rem;
+  display: block;
+  content: "";
+  align-self: center;
+}
+
+.clicked .description {
+  color: var(--secondary-font-color);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.clicked .description p {
+  margin: 0.5rem 0;
+}
+
+.clicked .description p {
+  margin: 0.5rem 0;
+}
+
+.clicked .description span {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.clicked .description span.colored {
+  color: var(--accent-color);
+}
+
+.clicked .skills-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.clicked .skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clicked .skill-container span {
+  padding: 0.5rem 1rem;
+  background-color: var(--darker-bg);
+  margin: 0 0.75rem 0.75rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary-font-color);
+  user-select: none;
+}
+
+.clicked .skill-container span:hover {
+  background-color: var(--accent-color);
+  color: var(--main-color);
+  transition: 0.3s;
+}
+
+@keyframes expand {
+  0% {
+  }
+  100% {
+    position: "fixed";
+    left: 0;
+    top: 5rem;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+    border-radius: 0rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #Projects .title,
+  .clicked .title {
+    font-size: 2.7rem;
+  }
+  .clicked .description {
+    font-size: 1.2rem;
+  }
+
+  .clicked .skills-title {
+    font-size: 1.8rem;
+  }
+  .clicked .skill-container span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #Projects .title,
+  .clicked .title {
+    font-size: 2rem;
+  }
+  .clicked .description {
+    font-size: 1.1rem;
+  }
+  .clicked .skills-title {
+    font-size: 1.4rem;
+  }
+  .clicked .skill-container span {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  @keyframes rearrange {
+    0% {
+    }
+    100% {
+      height: calc(50vh - 2.5rem);
+    }
+  }
+
+  .clicked .right-container {
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    height: calc(50vh - 2.5rem);
+    overflow-y: scroll;
+  }
+}

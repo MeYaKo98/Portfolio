@@ -19,7 +19,6 @@ This is a customizable portfolio website with:
 - JSON-based project configuration for easy updates
 - Dark mode support
 - Contact section
-- Deployed on GitHub Pages
 
 ## Getting Started
 
@@ -48,10 +47,6 @@ The page will reload when you make changes, and you may see any lint errors in t
 
 Builds the app for production to the `build` folder. The build is optimized and minified, ready for deployment.
 
-#### `npm run deploy`
-
-Deploys the application to GitHub Pages.
-
 #### `npm test`
 
 Launches the test runner in interactive watch mode.
@@ -61,7 +56,16 @@ Launches the test runner in interactive watch mode.
 - **Frontend**: React with component-based architecture
 - **Styling**: CSS3 with responsive design
 - **Data Management**: JSON-based project configuration
-- **Deployment**: GitHub Pages
+
+## GitHub Actions Workflow
+
+This project includes an automated GitHub Actions workflow (`.github/workflows/deploy.yml`) that:
+
+- **Automatically builds** the React application whenever code is pushed to the `main` branch
+- **Runs on Ubuntu** with Node.js v24
+- **Installs dependencies** using npm with caching for faster builds
+- **Builds the production bundle** optimized and minified for performance
+- **Deploys to GitHub Pages** automatically after a successful build
 
 ## Project Structure
 

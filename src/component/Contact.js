@@ -78,7 +78,7 @@ function Contact() {
               method="POST"
               onSubmit={sendEmail}
             >
-              <input type="hidden" name="_next" value="https://meyako98.github.io/Portfolio" />
+              <input type="hidden" name="_next" value="https://meyako.tn" />
               <label>Name</label>
               <input
                 type="text"

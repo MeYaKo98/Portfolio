@@ -1,31 +1,55 @@
+<h3>Overview</h3>
 <p>
-  The Motion Robotics Framework is a comprehensive C++ abstraction layer I
-  architected to decouple hardware logic from high-level algorithms, enabling
-  cross-platform portability and rapid prototyping for robotics systems.
+  The <strong>Motion Robotics Framework</strong> is a lightweight, high-performance C++ robotics framework for embedded microcontrollers. Built with a pure interface-driven architecture, each component—actuators, sensors, controllers, odometry, and motion profiles—derives from virtual base classes, enabling seamless composition and extensibility. This design decouples hardware implementation from motion control logic, allowing developers to integrate custom hardware drivers, novel control algorithms, and specialized protocols without modifying core logic. Optimized for real-time performance across ESP32, STM32, and Arduino platforms with native PlatformIO support.
 </p>
 
+<h3>Architecture Layers</h3>
+<img src="/projects/images/motion/architecture.png" alt="Motion Robotics Architecture">
+
+
+
+<h3>Core Components</h3>
+
+<h4>Core Layers</h4>
 <p>
-  The framework consists of three core components:
-  <br />· <strong>Motion Core:</strong> A robust nucleus for real-time odometry
-  and sensor fusion using modern C++ patterns
-  <br />· <strong>Motion Link:</strong> Middleware abstracting communication
-  layers to enable telemetry and command injection
-  <br />· <strong>RTOS Architecture:</strong> Multi-threaded real-time operating
-  system using mutexes and queues for thread-safe task execution
+  <strong>IO Layer:</strong> Virtual base classes for actuators (motors, servos, steppers), sensors (encoders, IMUs, LiDAR), and communication channels (Serial, TCP/IP, extensible to BLE/LoRaWAN).<br/>
+  <strong>Robot Layer:</strong> Extensible odometry (differential drive, Ackermann, mecanum), navigation orchestration, pluggable controllers (PID, LQR, MPC), motion profiles (trapezoidal, splines), and stop conditions (settle, oscillation, time-based).<br/>
+  <strong>Link Middleware:</strong> Abstracts communication protocols for remote telemetry, command injection, and real-time robot monitoring.
 </p>
 
+<h3>Key Features</h3>
+<ul>
+  <li><strong>Interface-Driven Extensibility:</strong> Virtual base classes enable custom implementations for any component without modifying core logic.</li>
+  <li><strong>Real-Time Performance:</strong> Lock-free designs and efficient interrupt handling ensure deterministic control across all configurations.</li>
+  <li><strong>Low Memory Footprint:</strong> Optimized for resource-constrained microcontrollers with minimal code bloat from dynamic polymorphism.</li>
+</ul>
+
+<h3>Composition-Based Design</h3>
 <p>
-  Key features include:
-  <br />· Flexible API designed for rapid prototyping with low-level hooks for
-  fine-grained robot control
-  <br />· Comprehensive documentation and integration examples reducing developer
-  onboarding time
-  <br />· Modular architecture supporting multiple robotics platforms
-  <br />· Real-time performance optimization for embedded systems
+  Each component is independently swappable: implement custom odometry for new drive types, extend profile generators for novel trajectories, or add sensors/actuators by implementing the appropriate virtual interfaces. The framework automatically composes these implementations without modification to core logic.
 </p>
 
+<h3 style="margin-top: 30px;">Motion Studio: VS Code Extension</h3>
 <p>
-  This framework accelerates development cycles and ensures consistency across
-  different robotic systems, making it ideal for both research and production
-  environments.
+  Complementing the Motion Framework is <strong>Motion Studio</strong>, a comprehensive VS Code extension that provides 
+  device control, communication tooling, and live debugging capabilities for any Motion Framework-based robot, 
+  regardless of drive type, controller, or sensor configuration.
 </p>
+
+<h4>Motion Studio Features</h4>
+<ul>
+  <li><strong>Multi-Protocol Support:</strong> TCP/IP or Serial with automatic device discovery (Bonjour/mDNS).</li>
+  <li><strong>Interactive CLI:</strong> TypeScript-based terminal interface for Motion Protocol commands.</li>
+  <li><strong>Binary Protocol:</strong> Type-safe serialization/deserialization with extensible command support (<code>getstatus</code>, <code>getposition</code>, <code>moveto</code>, <code>orient</code>, <code>stop</code>, custom commands).</li>
+  <li><strong>Developer Tools:</strong> Command history, context-aware help, and live logging for rapid debugging.</li>
+</ul>
+
+
+
+<h3>Integrated Ecosystem</h3>
+<ul>
+  <li><strong>Reliable Firmware:</strong> Motor control, odometry, and sensor fusion cleanly isolated on microcontroller.</li>
+  <li><strong>Live Debugging:</strong> Remote telemetry and command execution without re-compile/flash cycles.</li>
+  <li><strong>Extensible Design:</strong> Add drive types, sensors, controllers, and protocols without modifying core code.</li>
+  <li><strong>Type-Safe Communication:</strong> Packed binary protocol with strict validation prevents transmission errors.</li>
+</ul>

@@ -54,11 +54,11 @@ function Contact() {
             <div className="contact-info">
               <a
                 className="email-info-container"
-                href="mailto: mohamedyassine.koubaa@insat.ucar.tn"
+                href="mailto: contact@meyako.tn"
               >
                 <TfiEmail className="email-logo" />
                 <div className="email-info">
-                  mohamedyassine.koubaa<br></br>@insat.ucar.tn
+                  contact@meyako.tn
                 </div>
               </a>
               <a
@@ -74,7 +74,7 @@ function Contact() {
             <form 
               className="form" 
               ref={form}
-              action="https://formsubmit.co/mohamedyassine.koubaa@insat.ucar.tn"
+              action="https://formsubmit.co/contact@meyako.tn"
               method="POST"
               onSubmit={sendEmail}
             >

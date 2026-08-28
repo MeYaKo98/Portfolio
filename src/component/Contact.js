@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { TfiEmail } from "react-icons/tfi";
-import { ImWhatsapp } from "react-icons/im";
+import { FaLinkedin } from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
@@ -62,11 +62,13 @@ function Contact() {
                 </div>
               </a>
               <a
-                className="phone-info-container"
-                href="https://wa.me/21658137285"
+                className="linkedin-info-container"
+                href="https://www.linkedin.com/in/mohamed-yassine-koubaa/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <ImWhatsapp className="phone-logo" />
-                <div className="phone-info">+216 58 137 285</div>
+                <FaLinkedin className="linkedin-logo" />
+                <div className="linkedin-info">LinkedIn</div>
               </a>
             </div>
           </div>

@@ -256,6 +256,7 @@
     flex-direction: column-reverse;
     text-align: center;
     gap: 2rem;
+    justify-content: center;
   }
   #Home .left-container {
     width: 100%;
